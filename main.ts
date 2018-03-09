@@ -78,25 +78,16 @@ namespace CMPS11 {
     }
 
     /**
-     * Gets the integer part of the bearing Angle data.
+     * The decimal part to obtain bearing Angle data.
+     * data[0]: An integral part of a navigation Angle.
+     * data[1]: Navigation of the decimal fraction.
     */
     //% weight=40
-    //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): number {
-        let num = BEARING
-        BEARING = 0
-        return num
-    }
-
-    /**
-     * The decimal part to obtain bearing Angle data.
-    */
-    //% weight=30
     //% blockId=CMPS11_fine block="Fine"
-    export function fine(): Buffer {
-        let buf = pins.createBuffer(2)
-        buf[0] = BEARING
-        buf[1] = FINE
-        return buf
+    export function bearing(): Buffer {
+        let ber = pins.createBuffer(2)
+        ber[0] = BEARING
+        ber[1] = FINE
+        return ber
     }
 }
