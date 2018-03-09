@@ -83,7 +83,7 @@ namespace CMPS11 {
      * data[1]: Navigation of the decimal fraction.
     */
     //% weight=40
-    //% blockId=CMPS11_bearing block="Fine"
+    //% blockId=CMPS11_bearing block="Bearing"
     export function bearing(): Buffer {
         let ber = pins.createBuffer(2)
         ber[0] = BEARING
