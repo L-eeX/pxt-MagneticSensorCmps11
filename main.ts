@@ -38,7 +38,7 @@ namespace CMPS11 {
         let lowByte = data[1]
         pitch = data[2]
         roll = data[3]
-        bearing = ((highByte<<8)+lowByte)
+        bearing = ((highByte<<8)+lowByte)/10
         fine = ((highByte<<8)+lowByte)%10
         softVer = getSoftVer()
     }
@@ -57,7 +57,7 @@ namespace CMPS11 {
      * Execute a 42BYGH1861A-C step motor(Degree).
      * M1_M2/M3_M4.
     */
-    //% weight=80
+    //% weight=60
     //% blockId=CMPS11_pitch block="Pitch"
     export function pitch(): number {
         return pitch
@@ -67,7 +67,7 @@ namespace CMPS11 {
      * Execute a 42BYGH1861A-C step motor(Degree).
      * M1_M2/M3_M4.
     */
-    //% weight=80
+    //% weight=50
     //% blockId=CMPS11_roll block="Roll"
     export function roll(): number {
         return roll
@@ -77,12 +77,12 @@ namespace CMPS11 {
      * Execute a 42BYGH1861A-C step motor(Degree).
      * M1_M2/M3_M4.
     */
-    //% weight=80
+    //% weight=40
     //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): createBuffer {
+    export function bearing(): number {
         let bear = pins.createBuffer(2)
         bear[0] = bearing
         bear[1] = fine
-        return bear
+        return 15.2
     }
 }
