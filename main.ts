@@ -5,11 +5,11 @@
 namespace CMPS11 {
     const CMPS11_ADDRESS = 0x60
 
-    let pitch = 0
-    let roll = 0
-    let bearing = 0
-    let fine = 0
-    let softVersion = 0
+    let PITCH = 0
+    let ROLL = 0
+    let BEARING = 0
+    let FINE = 0
+    let SOFTVER = 0
 
     function i2cWriteByte(value: number) {
         pins.i2cWriteNumber(CMPS11_ADDRESS, value, NumberFormat.UInt8BE)
@@ -36,11 +36,11 @@ namespace CMPS11 {
         data = i2cRead(4)
         let highByte = data[0]
         let lowByte = data[1]
-        pitch = data[2]
-        roll = data[3]
-        bearing = ((highByte<<8)+lowByte)/10
-        fine = ((highByte<<8)+lowByte)%10
-        softVersion = getSoftVer()
+        PITCH = data[2]
+        ROLL = data[3]
+        BEARING = ((highByte<<8)+lowByte)/10
+        FINE = ((highByte<<8)+lowByte)%10
+        SOFTVER = getSoftVer()
     }
 
     /**
@@ -50,8 +50,39 @@ namespace CMPS11 {
     //% weight=70
     //% blockId=CMPS11_softVer block="Software version"
     export function softVer(): number {
-        return softVersion
+        return SOFTVER
     }
 
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=60
+    //% blockId=CMPS11_pitch block="Pitch"
+    export function pitch(): number {
+        return PITCH
+    }
 
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=50
+    //% blockId=CMPS11_roll block="Roll"
+    export function roll(): number {
+        return ROLL
+    }
+
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=40
+    //% blockId=CMPS11_bearing block="Bearing"
+    export function bearing(): number {
+        let bear = pins.createBuffer(2)
+        bear[0] = BEARING
+        bear[1] = FINE
+        return BEARING
+    }
 }
