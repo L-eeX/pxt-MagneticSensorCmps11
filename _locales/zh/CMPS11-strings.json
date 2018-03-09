@@ -3,5 +3,6 @@
     "CMPS11.softVer|block": "软件版本",
     "CMPS11.pitch|block": "俯仰角",
     "CMPS11.roll|block": "翻滚角",
-    "CMPS11.bearing|block": "航偏角"
+    "CMPS11.bearing|block": "航偏角",
+    "CMPS11.SerialDisplay|block": "串口 打印数据"
 }
