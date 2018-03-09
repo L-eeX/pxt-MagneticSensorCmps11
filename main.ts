@@ -97,7 +97,6 @@ namespace CMPS11 {
     //% weight=30
     //% blockId=CMPS11_SerialDisplay block="Serial Display Data"
     export function SerialDisplay(): void {
-        CMPS11.getData()
         let SoftVersion = "SoftVersion: " + CMPS11.softVer() + "\n"
         let itme = CMPS11.bearing()
         let Bearing = "Bearing: " + itme[0] + "." + itme[1] + "\n"
