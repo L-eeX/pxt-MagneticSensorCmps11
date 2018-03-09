@@ -1,7 +1,7 @@
 /**
  *This is DFRobot: the electronic compass user control library.
  */
-//% weight=10 color=#00F5FF icon="\uf013" block="CMPS11"
+//% weight=10 color=#00CED1 icon="\uf013" block="CMPS11"
 namespace CMPS11 {
     const CMPS11_ADDRESS = 0x60
 
