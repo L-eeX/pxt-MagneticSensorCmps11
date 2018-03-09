@@ -9,7 +9,7 @@ namespace CMPS11 {
     let roll = 0
     let bearing = 0
     let fine = 0
-    let softVer = 0
+    let softVersion = 0
 
     function i2cWriteByte(value: number) {
         pins.i2cWriteNumber(CMPS11_ADDRESS, value, NumberFormat.UInt8BE)
@@ -40,7 +40,7 @@ namespace CMPS11 {
         roll = data[3]
         bearing = ((highByte<<8)+lowByte)/10
         fine = ((highByte<<8)+lowByte)%10
-        softVer = getSoftVer()
+        softVersion = getSoftVer()
     }
 
     /**
@@ -50,7 +50,8 @@ namespace CMPS11 {
     //% weight=70
     //% blockId=CMPS11_softVer block="Software version"
     export function softVer(): number {
-        return softVer
+        return softVersion
     }
+
 
 }
