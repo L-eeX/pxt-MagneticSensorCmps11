@@ -1,7 +1,7 @@
 /**
- *This is DFRobot:motor user motor and steering control function.
+ *This is DFRobot: the electronic compass user control library.
  */
-//% weight=10 color=#DF6721 icon="\uf013" block="CMPS11"
+//% weight=10 color=#00F5FF icon="\uf013" block="CMPS11"
 namespace CMPS11 {
     const CMPS11_ADDRESS = 0x60
 
@@ -25,8 +25,9 @@ namespace CMPS11 {
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * This function is used to get all of the sensor data,
+     * and every time you need to get any data you have to 
+     * perform this function.
     */
     //% weight=80
     //% blockId=CMPS11_getData block="Getting data"
@@ -44,52 +45,57 @@ namespace CMPS11 {
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * Get the electronic compass software version.
     */
     //% weight=70
     //% blockId=CMPS11_softVer block="Software version"
     export function softVer(): number {
-        return SOFTVER
+        let num = SOFTVER
+        SOFTVER = 0
+        return num
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * Get the pitch Angle data.
     */
     //% weight=60
     //% blockId=CMPS11_pitch block="Pitch"
     export function pitch(): number {
-        return PITCH
+        let num = PITCH
+        PITCH = 0
+        return num
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * Gets the roll Angle data.
     */
     //% weight=50
     //% blockId=CMPS11_roll block="Roll"
     export function roll(): number {
-        return ROLL
+        let num = ROLL
+        ROLL = 0
+        return num
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * Gets the integer part of the bearing Angle data.
     */
     //% weight=40
     //% blockId=CMPS11_bearing block="Bearing"
     export function bearing(): number {
-        return BEARING
+        let num = BEARING
+        BEARING = 0
+        return num
     }
 
     /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
+     * The decimal part to obtain bearing Angle data.
     */
     //% weight=30
     //% blockId=CMPS11_fine block="Fine"
     export function fine(): number {
-        return FINE
+        let num = FINE
+        FINE = 0
+        return num
     }
 }
