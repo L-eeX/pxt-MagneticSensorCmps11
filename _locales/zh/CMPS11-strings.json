@@ -1,0 +1,7 @@
+{
+    "CMPS11.getData|block": "获取数据",
+    "CMPS11.softVer|block": "软件版本",
+    "CMPS11.pitch|block": "俯仰角",
+    "CMPS11.roll|block": "翻滚角",
+    "CMPS11.bearing|block": "航偏角"
+}

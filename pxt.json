@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "main.ts"
+        "main.ts",
+        "_locales/zh/CMPS11-strings.json"
     ],
     "testFiles": [
         "test.ts"
