@@ -14,4 +14,23 @@ namespace CMPS11 {
         return pins.i2cReadBuffer(CMPS11_ADDRESS, num);
     }
 
+
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=80
+    //% blockId=CMPS11_getData block="Getting data"
+    export function getData(): void {
+        i2cWriteByte(2)
+        let data = pins.createBuffer(4)
+        data = i2cRead(4)
+        let highByte=data[0]
+        let lowByte=data[1]
+        let pitch = data[2]
+        let roll = data[3]
+        let bearing = ((highByte<<8)+lowByte)
+        let fine = ((highByte<<8)+lowByte)%10
+        //let softVer = getSoftVer()
+    }
 }
