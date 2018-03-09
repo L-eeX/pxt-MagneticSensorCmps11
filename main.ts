@@ -28,7 +28,7 @@ namespace CMPS11 {
     //% weight=100
     //% degree.min=0 degree.max=180
     //% index.fieldEditor="gridpicker" index.fieldOptions.columns=4
-    export function servo(index: Servos, degree: number): void {
+    export function servo(index: number, degree: number): void {
 
     }
 }
