@@ -38,8 +38,8 @@ namespace CMPS11 {
         let lowByte = data[1]
         PITCH = data[2]
         ROLL = data[3]
-        BEARING = ((highByte<<8)+lowByte)/10
-        FINE = ((highByte<<8)+lowByte)%10
+        BEARING = ((highByte<<8)+lowByte)/10.0
+        //FINE = ((highByte<<8)+lowByte)%10
         SOFTVER = getSoftVer()
     }
 
@@ -80,9 +80,6 @@ namespace CMPS11 {
     //% weight=40
     //% blockId=CMPS11_bearing block="Bearing"
     export function bearing(): number {
-        let bear = pins.createBuffer(2)
-        bear[0] = BEARING
-        bear[1] = FINE
-        return bear
+        return BEARING
     }
 }
