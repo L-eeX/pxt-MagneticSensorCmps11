@@ -80,6 +80,16 @@ namespace CMPS11 {
     //% weight=40
     //% blockId=CMPS11_bearing block="Bearing"
     export function bearing(): number {
-        return 1.1
+        return BEARING
+    }
+
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=30
+    //% blockId=CMPS11_fine block="Fine"
+    export function fine(): number {
+        return FINE
     }
 }
