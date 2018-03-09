@@ -90,4 +90,23 @@ namespace CMPS11 {
         ber[1] = FINE
         return ber
     }
+
+    /**
+     * Serial port printing data.
+    */
+    //% weight=30
+    //% blockId=CMPS11_SerialDisplay block="Serial Display Data"
+    export function SerialDisplay(): void {
+        CMPS11.getData()
+        let SoftVersion = "SoftVersion: " + CMPS11.softVer() + "\n"
+        let itme = CMPS11.bearing()
+        let Bearing = "Bearing: " + itme[0] + "." + itme[1] + "\n"
+        let Pitch = "Pitch: " + CMPS11.pitch() + "\n"
+        let Roll = "Roll: " + CMPS11.roll() + "\n"
+        serial.writeString(SoftVersion)
+        serial.writeString(Bearing)
+        serial.writeString(Pitch)
+        serial.writeString(Roll)
+        serial.writeString("\n")
+    }
 }
