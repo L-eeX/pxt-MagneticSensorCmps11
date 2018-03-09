@@ -79,7 +79,7 @@ namespace CMPS11 {
     */
     //% weight=80
     //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): number {
+    export function bearing(): createBuffer {
         let bear = pins.createBuffer(2)
         bear[0] = bearing
         bear[1] = fine
