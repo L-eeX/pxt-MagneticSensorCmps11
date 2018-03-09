@@ -93,9 +93,10 @@ namespace CMPS11 {
     */
     //% weight=30
     //% blockId=CMPS11_fine block="Fine"
-    export function fine(): number {
-        let num = FINE
-        FINE = 0
-        return num
+    export function fine(): Buffer {
+        let buf = pins.createBuffer(2)
+        buf[0] = BEARING
+        buf[1] = FINE
+        return buf
     }
 }
