@@ -43,5 +43,14 @@ namespace CMPS11 {
         softVer = getSoftVer()
     }
 
+    /**
+     * Execute a 42BYGH1861A-C step motor(Degree).
+     * M1_M2/M3_M4.
+    */
+    //% weight=70
+    //% blockId=CMPS11_softVer block="Software version"
+    export function softVer(): number {
+        return softVer
+    }
 
 }
