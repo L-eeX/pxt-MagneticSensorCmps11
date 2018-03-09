@@ -78,28 +78,35 @@ namespace CMPS11 {
     }
 
     /**
-     * The decimal part to obtain bearing Angle data.
-     * data[0]: An integral part of a navigation Angle.
-     * data[1]: Navigation of the decimal fraction.
+     * Gets the integral part of the bearing Angle.
     */
     //% weight=40
-    //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): Buffer {
-        let ber = pins.createBuffer(2)
-        ber[0] = BEARING
-        ber[1] = FINE
-        return ber
+    //% blockId=CMPS11_bearing block="Bearing(integer)"
+    export function bearing(): number {
+        let num = BEARING
+        BEARING = 0
+        return num
+    }
+
+    /**
+     * Obtain the Bearing Angle decimal fraction..
+    */
+    //% weight=30
+    //% blockId=CMPS11_fine block="Bearing(decimal)"
+    export function fine(): number {
+        let num = FINE
+        FINE = 0
+        return num
     }
 
     /**
      * Serial port printing data.
     */
-    //% weight=30
+    //% weight=20
     //% blockId=CMPS11_SerialDisplay block="Serial Display Data"
     export function SerialDisplay(): void {
         let SoftVersion = "SoftVersion: " + CMPS11.softVer() + "\n"
-        let itme = CMPS11.bearing()
-        let Bearing = "Bearing: " + itme[0] + "." + itme[1] + "\n"
+        let Bearing = "Bearing: " + CMPS11.bearing() + "." + CMPS11.fine() + "\n"
         let Pitch = "Pitch: " + CMPS11.pitch() + "\n"
         let Roll = "Roll: " + CMPS11.roll() + "\n"
         serial.writeString(SoftVersion)
