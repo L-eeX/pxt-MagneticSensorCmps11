@@ -83,6 +83,6 @@ namespace CMPS11 {
         let bear = pins.createBuffer(2)
         bear[0] = BEARING
         bear[1] = FINE
-        return BEARING
+        return bear
     }
 }
