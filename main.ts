@@ -49,7 +49,7 @@ namespace CMPS11 {
     */
     //% weight=70
     //% blockId=CMPS11_softVer block="Software version"
-    export function softVer(): void {
+    export function softVer(): number {
         return softVer
     }
 
@@ -59,7 +59,7 @@ namespace CMPS11 {
     */
     //% weight=80
     //% blockId=CMPS11_pitch block="Pitch"
-    export function pitch(): void {
+    export function pitch(): number {
         return pitch
     }
 
@@ -69,7 +69,7 @@ namespace CMPS11 {
     */
     //% weight=80
     //% blockId=CMPS11_roll block="Roll"
-    export function roll(): void {
+    export function roll(): number {
         return roll
     }
 
@@ -79,7 +79,7 @@ namespace CMPS11 {
     */
     //% weight=80
     //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): void {
+    export function bearing(): PacketBuffer {
         let bear = pins.createBuffer(2)
         bear[0] = bearing
         bear[1] = fine
