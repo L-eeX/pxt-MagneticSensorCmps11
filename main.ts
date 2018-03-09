@@ -43,46 +43,5 @@ namespace CMPS11 {
         softVer = getSoftVer()
     }
 
-    /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
-    */
-    //% weight=70
-    //% blockId=CMPS11_softVer block="Software version"
-    export function softVer(): number {
-        return softVer
-    }
 
-    /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
-    */
-    //% weight=60
-    //% blockId=CMPS11_pitch block="Pitch"
-    export function pitch(): number {
-        return pitch
-    }
-
-    /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
-    */
-    //% weight=50
-    //% blockId=CMPS11_roll block="Roll"
-    export function roll(): number {
-        return roll
-    }
-
-    /**
-     * Execute a 42BYGH1861A-C step motor(Degree).
-     * M1_M2/M3_M4.
-    */
-    //% weight=40
-    //% blockId=CMPS11_bearing block="Bearing"
-    export function bearing(): number {
-        let bear = pins.createBuffer(2)
-        bear[0] = bearing
-        bear[1] = fine
-        return bearing
-    }
 }
